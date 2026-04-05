@@ -1,0 +1,425 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --cream: #faf6f1;
+  --ivory: #f3ebe0;
+  --rose-gold: #c8956a;
+  --mauve-dark: #5c3347;
+  --charcoal: #2a1f1a;
+  --text-soft: #6f5750;
+  --panel: rgba(250, 246, 241, 0.46);
+}
+
+body {
+  min-height: 100vh;
+  color: var(--charcoal);
+  font-family: 'Noto Serif TC', serif;
+  background: var(--cream);
+  position: relative;
+  isolation: isolate;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(250, 246, 241, 0.16), rgba(250, 246, 241, 0.16)),
+    url("Pictures/Background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  pointer-events: none;
+  z-index: -2;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background: rgba(250, 246, 241, 0.48);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(200, 149, 106, 0.3);
+}
+
+.nav-logo {
+  text-decoration: none;
+  color: var(--mauve-dark);
+  letter-spacing: 0.2em;
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+}
+
+.nav-logo span {
+  color: var(--rose-gold);
+  font-style: italic;
+  font-family: 'Cormorant Garamond', serif;
+  margin-left: 0.2rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-soft);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  color: var(--mauve-dark);
+}
+
+.nav-cta {
+  background: var(--mauve-dark);
+  color: var(--cream) !important;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+}
+
+.page-shell {
+  width: min(1120px, 92%);
+  margin: 2rem auto;
+  background: var(--panel);
+  border: 1px solid rgba(200, 149, 106, 0.3);
+  border-radius: 20px;
+  backdrop-filter: blur(3px);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 1.2rem;
+  padding: 2rem;
+  align-items: stretch;
+}
+
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.hero-eyebrow {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.25em;
+  color: var(--rose-gold);
+  font-size: 0.7rem;
+}
+
+.hero-title,
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--mauve-dark);
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.1;
+}
+
+.hero-subtitle {
+  color: var(--text-soft);
+  line-height: 1.9;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+  text-decoration: none;
+  padding: 0.7rem 1.3rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  border: 1px solid var(--mauve-dark);
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--mauve-dark);
+  color: var(--cream);
+}
+
+.btn-secondary {
+  color: var(--mauve-dark);
+  background: transparent;
+}
+
+.hero-right img,
+.about-img-box img,
+.gallery-card img,
+.booking-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-right {
+  min-height: 360px;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.quick-links {
+  padding: 2rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 1.6rem;
+}
+
+.section-tag {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.3em;
+  font-size: 0.65rem;
+  color: var(--rose-gold);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.panel-card {
+  background: rgba(243, 235, 224, 0.46);
+  border: 1px solid rgba(200, 149, 106, 0.35);
+  border-radius: 14px;
+  padding: 1.2rem;
+  color: var(--charcoal);
+  text-decoration: none;
+}
+
+.panel-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--mauve-dark);
+  margin-bottom: 0.4rem;
+  font-size: 1.5rem;
+}
+
+.panel-card p {
+  color: var(--text-soft);
+  line-height: 1.8;
+}
+
+.single-page {
+  padding: 2rem;
+}
+
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+.about-image-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+
+.about-img-box {
+  min-height: 180px;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.about-img-box.tall {
+  grid-row: span 2;
+}
+
+.about-layout p {
+  color: var(--text-soft);
+  line-height: 2;
+  margin-bottom: 1rem;
+}
+
+.stat-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.stat-row div {
+  background: rgba(243, 235, 224, 0.4);
+  border: 1px solid rgba(200, 149, 106, 0.35);
+  border-radius: 12px;
+  padding: 0.8rem;
+  min-width: 100px;
+}
+
+.stat-row strong {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--mauve-dark);
+  font-size: 2rem;
+}
+
+.stat-row span {
+  color: var(--text-soft);
+  font-size: 0.8rem;
+}
+
+.services-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.services-grid .panel-card strong {
+  color: var(--mauve-dark);
+  display: inline-block;
+  margin-top: 0.8rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-auto-rows: 250px;
+  gap: 0.9rem;
+}
+
+.gallery-card {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 14px;
+  position: relative;
+}
+
+.gallery-card.large {
+  grid-row: span 2;
+}
+
+.gallery-card figcaption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.8rem;
+  color: var(--cream);
+  background: linear-gradient(transparent, rgba(42, 31, 26, 0.75));
+  font-size: 0.9rem;
+}
+
+.booking-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.booking-image-wrap {
+  min-height: 420px;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.booking-form {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.booking-form label {
+  display: grid;
+  gap: 0.45rem;
+  color: var(--text-soft);
+  font-size: 0.85rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+  width: 100%;
+  border: 1px solid rgba(200, 149, 106, 0.5);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.38);
+  padding: 0.7rem;
+  font-family: 'Noto Serif TC', serif;
+}
+
+.booking-form textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+footer {
+  width: min(1120px, 92%);
+  margin: 0 auto 2rem;
+  padding: 1.1rem 1.2rem;
+  background: rgba(42, 31, 26, 0.62);
+  border-radius: 14px;
+  text-align: center;
+}
+
+.footer-copy {
+  color: rgba(250, 246, 241, 0.72);
+  font-size: 0.8rem;
+}
+
+@media (max-width: 960px) {
+  .hero,
+  .about-layout,
+  .booking-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 220px;
+  }
+
+  .gallery-card.large {
+    grid-row: span 1;
+  }
+}
+
+@media (max-width: 680px) {
+  .page-shell {
+    background: rgba(250, 246, 241, 0.38);
+  }
+
+  .panel-card {
+    background: rgba(243, 235, 224, 0.4);
+  }
+
+  .stat-row div {
+    background: rgba(243, 235, 224, 0.32);
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+  }
+
+  .card-grid,
+  .services-grid,
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}

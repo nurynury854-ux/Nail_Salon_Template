@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>線上預約 | Nail Atelier</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+TC:wght@300;400;500;600&family=Cinzel:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav>
+    <a href="Nail_Salon.html" class="nav-logo">ATELIER<span>美甲</span></a>
+    <ul class="nav-links">
+      <li><a href="about.html">關於我們</a></li>
+      <li><a href="services.html">服務項目</a></li>
+      <li><a href="gallery.html">作品集</a></li>
+      <li><a class="active" href="booking.html">線上預約</a></li>
+      <li><a href="booking.html" class="nav-cta">立即預約</a></li>
+    </ul>
+  </nav>
+
+  <main class="page-shell single-page">
+    <div class="section-header">
+      <span class="section-tag">Book Now</span>
+      <h1 class="section-title">預約您的專屬時光</h1>
+    </div>
+
+    <section class="booking-layout">
+      <div class="booking-image-wrap">
+        <img src="Pictures/Nail_Pictures/nail4.png" alt="Booking" />
+      </div>
+      <form class="booking-form" id="booking-form">
+        <label>姓名<input type="text" placeholder="您的姓名" required /></label>
+        <label>電話<input type="tel" placeholder="0900 000 000" required /></label>
+        <div class="form-row">
+          <label>日期<input type="date" required /></label>
+          <label>時間<input type="time" required /></label>
+        </div>
+        <label>服務項目
+          <select required>
+            <option value="">請選擇服務</option>
+            <option>凝膠美甲</option>
+            <option>藝術彩繪</option>
+            <option>水晶延甲</option>
+            <option>美甲護理</option>
+            <option>漸層渲染</option>
+            <option>婚慶專案</option>
+          </select>
+        </label>
+        <label>備註 (選填)<textarea placeholder="如有特殊需求或參考圖片，歡迎告知..."></textarea></label>
+        <button class="btn-primary" type="submit">送出預約申請</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p class="footer-copy">&copy; <span id="year"></span> Nail Atelier. 版權所有。</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
